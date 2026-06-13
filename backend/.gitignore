@@ -1,0 +1,78 @@
+# backend/.gitignore
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+prisma/*.db
+prisma/*.db-journal
+prisma/migrations/*.db
+
+# Uploaded files
+uploads/*
+!uploads/.gitkeep
+temp/
+tmp/
+
+# Log files
+logs/*
+!logs/.gitkeep
+*.log
+access.log
+error.log
+
+# Build files
+dist/
+build/
+.next/
+out/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Coverage files
+coverage/
+.nyc_output/
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Misc
+*.pid
+*.seed
+*.pid.lock
+.env.*.local
+.env.backup
+*.bak

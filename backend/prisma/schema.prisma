@@ -1,0 +1,54 @@
+// prisma/schema.prisma
+// Database schema for ResumeAI Pro
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Main analysis table - stores all resume analysis results
+model Analysis {
+  id                String   @id @default(uuid())
+  resumeText        String   @db.Text
+  targetRole        String
+  atsScore          Int
+  roleMatch         Int
+  missingKeywords   String[]
+  strengths         String[]
+  weaknesses        String[]
+  suggestions       Json
+  interviewChance   String
+  oneLinerFeedback  String   @db.Text
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+  
+  // Optional fields
+  resumeFileName    String?  @map("resume_file_name")
+  fileSize          Int?     @map("file_size")
+  processingTime    Int?     @map("processing_time")
+  
+  // Indexes
+  @@index([createdAt(sort: Desc)])
+  @@index([targetRole])
+  @@index([atsScore])
+  @@map("analyses")
+}
+
+// API usage tracking
+model ApiUsage {
+  id           String   @id @default(uuid())
+  endpoint     String
+  method       String
+  ipAddress    String?  @map("ip_address")
+  statusCode   Int      @map("status_code")
+  responseTime Int      @map("response_time")
+  createdAt    DateTime @default(now()) @map("created_at")
+  
+  @@index([createdAt(sort: Desc)])
+  @@index([endpoint])
+  @@map("api_usage")
+}
