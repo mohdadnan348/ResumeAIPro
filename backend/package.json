@@ -1,48 +1,30 @@
 {
-  "name": "resume-ai-backend",
+  "name": "resume-ai-frontend",
   "version": "1.0.0",
-  "description": "Backend for ResumeAI Pro - AI-powered ATS resume scoring system",
-  "main": "src/index.js",
+  "private": true,
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "prod": "NODE_ENV=production node src/index.js",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [
-    "resume-analyzer",
-    "ats-scorer",
-    "ai",
-    "openai",
-    "resume",
-    "express",
-    "postgresql"
-  ],
-  "author": "Mohd Adnan",
-  "license": "MIT",
   "dependencies": {
-    "@prisma/client": "^6.0.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.0",
-    "express-rate-limit": "^7.4.0",
-    "helmet": "^7.1.0",
-    "morgan": "^1.10.0",
-    "multer": "^2.0.0",
-    "openai": "^4.67.0",
-    "pdf-parse": "^1.1.1",
-    "zod": "^3.23.8"
+    "axios": "^1.7.9",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "next": "15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-dropzone": "^14.3.5",
+    "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7",
-    "prisma": "^6.0.0"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
+    "@types/node": "^20.17.10",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
   }
 }
