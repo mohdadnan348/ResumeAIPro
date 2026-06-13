@@ -1,0 +1,208 @@
+/* components/ui/ScoreCard.module.css */
+.container {
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.statCard {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.statHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.statIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Score Circle */
+.scoreCircle {
+  position: relative;
+  width: 120px;
+  margin: 0 auto 0.75rem;
+}
+
+.progressRing {
+  width: 100%;
+  height: auto;
+}
+
+.progressRingBg {
+  stroke: #e2e8f0;
+}
+
+.progressRingFill {
+  transition: stroke-dasharray 0.8s ease;
+  transform-origin: center;
+  transform: rotate(-90deg);
+}
+
+.scoreValue {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.scoreNumber {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.scoreMax {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.scoreStatus {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Match Percentage */
+.matchPercentage {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.matchNumber {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1e293b;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.progressBar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.matchDesc {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+/* Interview Chance */
+.chanceValue {
+  margin-bottom: 0.5rem;
+}
+
+.chanceText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.chanceDesc {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.chanceIconHigh {
+  color: #10b981;
+}
+
+.chanceIconMedium {
+  color: #f59e0b;
+}
+
+.chanceIconLow {
+  color: #ef4444;
+}
+
+/* Feedback Card */
+.feedbackCard {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.feedbackText {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4c1d95;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .scoreCircle {
+    width: 100px;
+  }
+
+  .scoreNumber {
+    font-size: 1.5rem;
+  }
+
+  .matchNumber {
+    font-size: 1.5rem;
+  }
+}

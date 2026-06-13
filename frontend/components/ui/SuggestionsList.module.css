@@ -1,0 +1,206 @@
+/* components/ui/SuggestionsList.module.css */
+.container {
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.suggestionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.suggestionCard {
+  background: #f8fafc;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.suggestionCard:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.priorityhigh {
+  border-left-color: #ef4444;
+}
+
+.prioritymedium {
+  border-left-color: #f59e0b;
+}
+
+.prioritylow {
+  border-left-color: #10b981;
+}
+
+.suggestionHeader {
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.priorityBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.priorityIconHigh {
+  width: 16px;
+  height: 16px;
+  color: #ef4444;
+}
+
+.priorityIconMedium {
+  width: 16px;
+  height: 16px;
+  color: #f59e0b;
+}
+
+.priorityIconLow {
+  width: 16px;
+  height: 16px;
+  color: #10b981;
+}
+
+.priorityText {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.suggestionAction {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.actionText {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.chevron {
+  color: #94a3b8;
+  transition: transform 0.2s ease;
+}
+
+.suggestionDetails {
+  padding: 0 1rem 1rem 1rem;
+  border-top: 1px solid #e2e8f0;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reasonSection {
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.reasonText {
+  font-size: 0.8125rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.projectSection {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.projectText {
+  font-size: 0.8125rem;
+  color: #4c1d95;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.learnMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #6366f1;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.learnMoreBtn:hover {
+  color: #4f46e5;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .suggestionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actionText {
+    font-size: 0.8125rem;
+  }
+
+  .reasonText,
+  .projectText {
+    font-size: 0.75rem;
+  }
+}
